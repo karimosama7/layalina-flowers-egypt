@@ -35,21 +35,21 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a 
-              key={link.label} 
+            <a
+              key={link.label}
               href={link.href}
               className={`hover:text-accent transition-colors text-lg ${lang === 'ar' ? 'font-sans' : 'font-serif'}`}
             >
               {link.label}
             </a>
           ))}
-          <button 
+          <button
             onClick={toggleLang}
             className="border border-accent px-3 py-1 rounded-full hover:bg-accent hover:text-primary transition-all text-sm"
           >
             {t.language}
           </button>
-          <a 
+          <a
             href="#contact"
             className="bg-accent text-primary px-5 py-2 rounded-md font-semibold hover:bg-white transition-colors"
           >
@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden z-50"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -69,8 +69,8 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
         {isOpen && (
           <div className="fixed inset-0 bg-primary/95 flex flex-col items-center justify-center gap-8 md:hidden z-40">
             {navLinks.map((link) => (
-              <a 
-                key={link.label} 
+              <a
+                key={link.label}
                 href={link.href}
                 className="text-2xl hover:text-accent"
                 onClick={() => setIsOpen(false)}
@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
                 {link.label}
               </a>
             ))}
-            <button 
+            <button
               onClick={() => {
                 toggleLang();
                 setIsOpen(false);
@@ -87,13 +87,13 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang, t }) => {
             >
               {t.language}
             </button>
-             <a 
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-                className="bg-accent text-primary px-8 py-3 rounded-md font-bold text-xl"
-              >
-                {t.contact}
-              </a>
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="bg-accent text-primary px-8 py-3 rounded-md font-bold text-xl"
+            >
+              {t.contact}
+            </a>
           </div>
         )}
       </div>
